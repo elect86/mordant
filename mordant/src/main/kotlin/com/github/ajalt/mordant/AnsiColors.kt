@@ -28,11 +28,11 @@ open class AnsiCode(protected val codes: List<Pair<List<Int>, Int>>) : (String) 
         // close a command.
         val openCodesByCloseCode = HashMap<Int, List<Int>>()
         for ((o, c) in codes) openCodesByCloseCode[c] = o
-        val atEnd = it.range.endInclusive == text.lastIndex
-        val codes = it.groupValues[1].splitToSequence(';').flatMap {
-            it.toInt().let {
-                if (atEnd && it in openCodesByCloseCode) emptySequence()
-                else (openCodesByCloseCode[it]?.asSequence() ?: sequenceOf(it))
+        val atEnd = it.range.last == text.lastIndex
+        val codes = it.groupValues[1].splitToSequence(';').flatMap { g ->
+            g.toInt().let { code ->
+                if (atEnd && code in openCodesByCloseCode) emptySequence()
+                else (openCodesByCloseCode[code]?.asSequence() ?: sequenceOf(code))
             }
         }
 

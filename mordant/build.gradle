@@ -20,7 +20,7 @@ repositories {
 }
 
 dependencies {
-    compile 'com.github.ajalt:colormath:1.2.0'
+    compile 'com.github.ajalt:colormath:1.4.0'
 }
 
 task sourcesJar(type: Jar, dependsOn: classes) {
