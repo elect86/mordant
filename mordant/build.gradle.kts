@@ -2,6 +2,7 @@ import org.jetbrains.dokka.ReflectDsl.get
 
 apply(plugin = "org.jetbrains.dokka")
 apply(plugin = "maven")
+apply(plugin = "com.jfrog.bintray")
 
 
 buildscript {
@@ -12,12 +13,6 @@ buildscript {
     dependencies {
         classpath("com.jfrog.bintray.gradle:gradle-bintray-plugin:1.8.2")
     }
-}
-
-apply(plugin = "com.jfrog.bintray")
-
-repositories {
-    mavenCentral()
 }
 
 dependencies {

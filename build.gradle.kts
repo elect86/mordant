@@ -12,7 +12,6 @@ buildscript {
 }
 
 apply(plugin = "idea")
-apply(plugin = "kotlin")
 
 plugins {
     `kotlin-dsl`
@@ -25,7 +24,7 @@ repositories {
 }
 
 subprojects {
-    apply(plugin = "org.jetbrains.kotlin.jvm")
+    apply(plugin = "kotlin")
 
     group = findProperty("GROUP")!!
     version = findProperty("VERSION_NAME")!!
