@@ -3,11 +3,7 @@ repositories {
 }
 
 apply(plugin = "maven")
-//apply(plugin = "com.jfrog.bintray")
-
-//plugins {
-//    id("com.jfrog.bintray") version "1.8.2"
-//}
+apply(plugin = "com.jfrog.bintray")
 
 val versionTag = findProperty("VERSION_NAME")!!
 val githubRepo = extra.get("githubRepo") as String
